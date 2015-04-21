@@ -1,0 +1,61 @@
+A Shiny Application: Chick Weight Predictor
+========================================================
+author: Sheila Yio
+date: Tue Apr 21 17:48:52 2015
+
+Objective
+========================================================
+
+The objective of the Chick Weight Predictor is to predict
+the weight (in gm) of a chick based on its diet and age 
+(in days) from birth. 
+
+This application is particularly useful for users who are
+interested to find out how different protein diet of 
+chickens affect their early growth.
+
+User Guide
+========================================================
+
+User is free to input two variables:
+
+- Diet Type (choice of four diet)
+- Age of Chick (in days)
+
+With the inputs from user, the application will predict 
+the chick's weight. The application will also 
+display a chart showing the Age vs Weight of a chick for 
+the particular diet type selected.
+
+To try the Chick Weight Predictor application, please click 
+[here](https://sheilayio.shinyapps.io/DevDataPdt_Project/).
+
+Prediction Model
+========================================================
+
+The application uses a simple linear model fit as follow:
+
+
+```r
+lm(weight ~ Diet + Time, data = ChickWeight)
+```
+
+The linear model appears to be a decent fit for our
+prediction application, given it's relatively high adjusted
+R-squared value of 
+
+
+```
+[1] 0.7435224
+```
+
+Limitations
+========================================================
+
+User should not that the ChickWeight data only tested the 
+effect of diet on **early growth** of chicks (up to 21 
+days from birth).
+
+Therefore user should use the application with **caution**
+when predicting the weight beyond Day 21 from birth of 
+the chick.
